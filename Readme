@@ -1,0 +1,17 @@
+There are 3 ways of data-copier execution
+1) In pyCharm
+           just right click on app.py and run---required arguments are passed and env variables are also set in configuration
+           and file vl run
+           to check again go to "docker exec -it retail_pg psql -U retail_user -d retail_db"
+           select count(*) from departments,categories;
+           truncate table departments;
+           truncate table categories;
+2) powershell:
+    set env variables using  $env:DB_NAME = "retail_db" (dont do typos)
+    set all 5 variables
+    run python app/app.py orders,order_items
+
+
+3) dockercommand.sh:
+docker build -t data-copier . --------------------> data-copier docker custom image is created
+just copy the command in dockercommand.sh in terminal and it vl run
